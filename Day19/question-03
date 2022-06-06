@@ -1,0 +1,22 @@
+Question 03 :LeetCode 1290. Convert Binary Number in a Linked List to Integer
+Solution :
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        
+        int length=0;
+        ListNode temp=head;
+        while(temp!=null){
+          
+            temp=temp.next;
+              length++;
+        }
+        int sum=0;
+        ListNode temp1=head;
+        while(temp1!=null){
+           sum+=(temp1.val)*(Math.pow(2,length-1));
+            temp1=temp1.next;
+           length--;
+        }
+        return sum;
+    }
+}
